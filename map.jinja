@@ -1,0 +1,7 @@
+
+{% set server = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['git', 'etckeeper'],
+
+    },
+}, merge=salt['pillar.get']('etckeeper:server')) %}
